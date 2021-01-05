@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "634384880360",
+    "project_id": "unwind-cbbfc",
+    "storage_bucket": "unwind-cbbfc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634384880360:android:eaee74103a7eb1050daf5d",
+        "android_client_info": {
+          "package_name": "dev.kotlin.unwind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634384880360-1ko57lvgfjaq9cj73karfrlro4rrjlu2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDobTLcca5hTnP4z-v-kkLYVAk16aITq0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634384880360-1ko57lvgfjaq9cj73karfrlro4rrjlu2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634384880360:android:20f24a36436689a40daf5d",
+        "android_client_info": {
+          "package_name": "dev.unwind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634384880360-1ko57lvgfjaq9cj73karfrlro4rrjlu2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDobTLcca5hTnP4z-v-kkLYVAk16aITq0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634384880360-1ko57lvgfjaq9cj73karfrlro4rrjlu2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
