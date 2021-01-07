@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainRegister : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         auth = FirebaseAuth.getInstance()
+
+
 
         btnRegister.setOnClickListener {
             if (editEmail.text.trim().toString().isNotEmpty() || editPassword.text.trim()
@@ -56,7 +58,6 @@ class MainActivity : AppCompatActivity() {
         if (user != null) {
             var intent = Intent(this, DashboardActivity::class.java)
             startActivity(intent)
-
         }
     }
 

@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Unwind">
-        <activity android:name=".DashboardActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainLogin"></activity>
+        <activity android:name=".MainRegister" />
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".MainStartpage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

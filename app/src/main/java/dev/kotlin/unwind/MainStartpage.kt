@@ -4,23 +4,24 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_dashboard.*
+import kotlinx.android.synthetic.main.activity_main_startpage.*
 
-class DashboardActivity : AppCompatActivity() {
-
+class MainStartpage : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+        setContentView(R.layout.activity_main_startpage)
 
         auth = FirebaseAuth.getInstance()
 
-        btnSignOut.setOnClickListener {
-            auth.signOut()
 
+        btnMainPageLogin.setOnClickListener {
+            var intent = Intent(this, MainLogin::class.java)
+            startActivity(intent)
+        }
+        btnMainPageRegister.setOnClickListener {
             var intent = Intent(this, MainRegister::class.java)
             startActivity(intent)
-
         }
     }
 }
