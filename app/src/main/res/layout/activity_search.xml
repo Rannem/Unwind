@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:text="search field"
+        android:hint="search field"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,10 +27,19 @@
         app:layout_constraintTop_toBottomOf="@+id/etSearchField" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTvContent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSearchContent" />
+
+    <TextView
+        android:id="@+id/tvTestingPurpose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvTvContent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
