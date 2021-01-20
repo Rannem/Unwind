@@ -2,5 +2,6 @@ package dev.kotlin.unwind.models
 
 enum class ContentType(val contentType: String) {
     TV_SHOW("tvShow"),
-    MOVIE("movie")
+    MOVIE("movie"),
+    NOVALUE("noValue")
 }
