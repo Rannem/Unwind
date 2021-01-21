@@ -16,7 +16,7 @@ class MainStartpage : AppCompatActivity() {
 
 
         btnMainPageLogin.setOnClickListener {
-            var intent = Intent(this, SearchActivity::class.java)
+            var intent = Intent(this, DashboardActivity::class.java)
             startActivity(intent)
         }
         btnMainPageRegister.setOnClickListener {
