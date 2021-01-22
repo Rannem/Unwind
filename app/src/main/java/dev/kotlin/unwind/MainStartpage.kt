@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
-import dev.kotlin.unwind.activity.SearchActivity
+import dev.kotlin.unwind.activity.DashboardActivity
 import kotlinx.android.synthetic.main.activity_main_startpage.*
 
 class MainStartpage : AppCompatActivity() {
