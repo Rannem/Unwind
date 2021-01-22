@@ -22,6 +22,7 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
         btnTestContentSearch.setOnClickListener {
             var intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
