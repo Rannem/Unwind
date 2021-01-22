@@ -44,6 +44,7 @@ class SearchActivity : AppCompatActivity() {
             override fun onContentClicked(contentId: Int, contentType: ContentType) {
                 val intent = Intent(this@SearchActivity, ContentViewActivity::class.java)
                 intent.putExtra("contentId", contentId)
+                intent.putExtra("contentType", contentType)
                 startActivity(intent)
             }
         })
