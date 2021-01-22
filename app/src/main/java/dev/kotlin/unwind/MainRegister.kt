@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import dev.kotlin.unwind.activity.DashboardActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainRegister : AppCompatActivity() {

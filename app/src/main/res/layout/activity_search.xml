@@ -4,18 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
-
-    <EditText
-        android:id="@+id/etSearchField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="search field"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".activity.SearchActivity">
 
     <!--<androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -26,6 +15,20 @@
         app:cardElevation="5dp">
 
     </androidx.cardview.widget.CardView>-->
+
+    <EditText
+        android:id="@+id/etSearchField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_field"
+        android:inputType="text"
+        android:textColorHint="@color/white"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSearchContent"
@@ -42,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:descendantFocusability="blocksDescendants"
+        android:background="@color/primaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,11 +90,13 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="Tv Show"
+                android:textColor="@color/white"
                 android:padding="16dp"
                 />
 
             <RadioButton
                 android:id="@+id/rb_movies"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Movie"
