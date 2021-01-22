@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Unwind</string>
+    <string name="user_name">Helge Olsen</string>
+    <string name="dummytext_minicard_movie">125</string>
+    <string name="card_movies">Movies</string>
+    <string name="user_watch_list">Watch List</string>
+    <string name="dummyvalue_minicard_list">5</string>
+    <string name="dummyvalue_minicard_following">Following</string>
+    <string name="dummy_value_minicard_following">32</string>
+    <string name="profile_activity_feed">Profile Activity</string>
+    <string name="profile_image_create_profile">profile_image_create_profile</string>
+    <string name="name">Name</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="favorite_genre">Favorite Genre</string>
+    <string name="bio">Bio</string>
+    <string name="age">Age</string>
+    <string name="sp_last_name">Last Name:</string>
+    <string name="sp_age">Age</string>
+    <string name="sp_first_name">First Name:</string>
+    <string name="sp_bio">Bio:</string>
+    <string name="sp_profile">Profile</string>
+    <string name="profile_image">profile image</string>
+
 </resources>

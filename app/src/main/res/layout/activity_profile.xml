@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".ProfileActivity">
+
+
+    <TextView
+        android:id="@+id/tv_sp_profile_title"
+        android:layout_width="112dp"
+        android:layout_height="62dp"
+        android:padding="10dp"
+        android:text="@string/sp_profile"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ImageView
+        android:id="@+id/tv_sp_profile_image"
+        android:layout_width="115dp"
+        android:layout_height="117dp"
+        android:contentDescription="@string/profile_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sp_profile_title"
+        app:layout_constraintVertical_bias="0.091"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_sp_first_name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="42dp"
+        android:padding="10dp"
+        android:text="@string/sp_first_name"
+        android:textColor="@color/background_dark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sp_profile_image"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <TextView
+        android:id="@+id/tv_sp_last_name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:padding="10dp"
+        android:text="@string/sp_last_name"
+        android:textColor="@color/background_dark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sp_first_name"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <TextView
+        android:id="@+id/tv_sp_age"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:padding="10dp"
+        android:text="@string/sp_age"
+        android:textColor="@color/background_dark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sp_last_name"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <TextView
+        android:id="@+id/tv_sp_bio"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:padding="10dp"
+        android:text="@string/sp_bio"
+        android:textColor="@color/background_dark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sp_age"
+        app:layout_constraintVertical_bias="0.053" />
+
+    <TextView
+        android:id="@+id/sp_tv_user_firstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="user first name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toEndOf="@+id/tv_sp_first_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sp_profile_image"
+        app:layout_constraintVertical_bias="0.175" />
+
+    <TextView
+        android:id="@+id/sp_tv_user_lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="User Last Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toEndOf="@+id/tv_sp_last_name"
+        app:layout_constraintTop_toBottomOf="@+id/sp_tv_user_firstname"
+        app:layout_constraintVertical_bias="0.115" />
+
+    <TextView
+        android:id="@+id/sp_tv_user_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="User Age"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toEndOf="@+id/tv_sp_age"
+        app:layout_constraintTop_toBottomOf="@+id/sp_tv_user_lastname"
+        app:layout_constraintVertical_bias="0.153" />
+
+    <TextView
+        android:id="@+id/sp_tv_user_bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="User Bio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toEndOf="@+id/tv_sp_bio"
+        app:layout_constraintTop_toBottomOf="@+id/sp_tv_user_age"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/sp_btn_edit_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:layout_marginStart="318dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="339dp"
+        android:layout_marginBottom="92dp"
+        android:clickable="true"
+        android:contentDescription="@string/sp_edit"
+        android:src="@drawable/ic_my_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sp_bio" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
