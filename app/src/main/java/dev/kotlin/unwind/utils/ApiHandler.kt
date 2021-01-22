@@ -7,7 +7,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import dev.kotlin.unwind.SearchActivityAdapter
+import dev.kotlin.unwind.adapters.SearchActivityAdapter
 import dev.kotlin.unwind.models.Content
 import dev.kotlin.unwind.models.ContentType
 import dev.kotlin.unwind.models.Movies

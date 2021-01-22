@@ -1,10 +1,12 @@
-package dev.kotlin.unwind
+package dev.kotlin.unwind.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import dev.kotlin.unwind.R
+import dev.kotlin.unwind.adapters.SearchActivityAdapter
 import dev.kotlin.unwind.models.Content
 import dev.kotlin.unwind.models.ContentType
 import dev.kotlin.unwind.utils.ApiHandler

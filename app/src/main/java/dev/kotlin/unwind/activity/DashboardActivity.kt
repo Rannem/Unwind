@@ -1,9 +1,11 @@
-package dev.kotlin.unwind
+package dev.kotlin.unwind.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
+import dev.kotlin.unwind.MainRegister
+import dev.kotlin.unwind.R
 import kotlinx.android.synthetic.main.activity_dashboard.*
 
 class DashboardActivity : AppCompatActivity() {

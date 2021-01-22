@@ -1,4 +1,4 @@
-package dev.kotlin.unwind
+package dev.kotlin.unwind.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import dev.kotlin.unwind.R
 import dev.kotlin.unwind.models.Content
 
 class SearchActivityAdapter(
@@ -30,11 +31,16 @@ class SearchActivityAdapter(
             val item: Content? = content[position]
             val coverUrl = item?.getCoverImageUrl()
             if (coverUrl != "no_image") {
-                Picasso.get().load(coverUrl).resize(COVER_IMAGE_WIDTH, COVER_IMAGE_HEIGHT).into(imageView);
+                Picasso.get().load(coverUrl).resize(
+                    COVER_IMAGE_WIDTH,
+                    COVER_IMAGE_HEIGHT
+                ).into(imageView);
             } else {
                 imageView.setImageResource(R.drawable.test)
-                imageView.layoutParams.width = COVER_IMAGE_WIDTH
-                imageView.layoutParams.height = COVER_IMAGE_HEIGHT
+                imageView.layoutParams.width =
+                    COVER_IMAGE_WIDTH
+                imageView.layoutParams.height =
+                    COVER_IMAGE_HEIGHT
             }
             textView.text = item?.getTitle()
         }
@@ -43,7 +49,12 @@ class SearchActivityAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(context).inflate(R.layout.content_card, parent, false)
         val layoutParams = view.findViewById<CardView>(R.id.cvContentCard).layoutParams as ViewGroup.MarginLayoutParams
-        layoutParams.setMargins(MARGIN_SIZE, MARGIN_SIZE, MARGIN_SIZE, MARGIN_SIZE)
+        layoutParams.setMargins(
+            MARGIN_SIZE,
+            MARGIN_SIZE,
+            MARGIN_SIZE,
+            MARGIN_SIZE
+        )
         return ViewHolder(view)
     }
 
