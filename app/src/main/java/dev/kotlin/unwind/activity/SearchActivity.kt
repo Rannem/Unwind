@@ -1,5 +1,6 @@
 package dev.kotlin.unwind.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -39,7 +40,13 @@ class SearchActivity : AppCompatActivity() {
         }
 
         content = mutableListOf()
-        adapter = SearchActivityAdapter(this, content)
+        adapter = SearchActivityAdapter(this, content, object: SearchActivityAdapter.ContentClickListener {
+            override fun onContentClicked(contentId: Int, contentType: ContentType) {
+                val intent = Intent(this@SearchActivity, ContentViewActivity::class.java)
+                intent.putExtra("contentId", contentId)
+                startActivity(intent)
+            }
+        })
         apiHandler = ApiHandler()
 
         rvTvContent.adapter = adapter

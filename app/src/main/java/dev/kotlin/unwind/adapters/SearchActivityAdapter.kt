@@ -11,16 +11,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import dev.kotlin.unwind.R
 import dev.kotlin.unwind.models.Content
+import dev.kotlin.unwind.models.ContentType
 
 class SearchActivityAdapter(
     private val context: Context,
-    private val content: MutableList<Content?>
+    private val content: MutableList<Content?>,
+    private val contentClickListener: ContentClickListener
 ) : RecyclerView.Adapter<SearchActivityAdapter.ViewHolder>() {
 
     companion object {
         private const val MARGIN_SIZE = 10
         private const val COVER_IMAGE_WIDTH = 550
         private const val COVER_IMAGE_HEIGHT = 750
+    }
+
+    interface ContentClickListener {
+        fun onContentClicked(contentId: Int, contentType: ContentType)
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -43,12 +49,19 @@ class SearchActivityAdapter(
                     COVER_IMAGE_HEIGHT
             }
             textView.text = item?.getTitle()
+
+            imageView.setOnClickListener{
+                if (item != null) {
+                    contentClickListener.onContentClicked(item.getContentId(), item.contentType)
+                }
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(context).inflate(R.layout.content_card, parent, false)
-        val layoutParams = view.findViewById<CardView>(R.id.cvContentCard).layoutParams as ViewGroup.MarginLayoutParams
+        val layoutParams =
+            view.findViewById<CardView>(R.id.cvContentCard).layoutParams as ViewGroup.MarginLayoutParams
         layoutParams.setMargins(
             MARGIN_SIZE,
             MARGIN_SIZE,
