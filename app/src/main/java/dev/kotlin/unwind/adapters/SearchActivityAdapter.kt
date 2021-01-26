@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import dev.kotlin.unwind.R
 import dev.kotlin.unwind.models.Content
-import dev.kotlin.unwind.models.ContentType
 
 class SearchActivityAdapter(
     private val context: Context,
@@ -26,8 +25,10 @@ class SearchActivityAdapter(
     }
 
     interface ContentClickListener {
-        fun onContentClicked(contentId: Int, contentType: ContentType)
+        fun onContentClicked(content: Content)
     }
+
+
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val imageView = itemView.findViewById<ImageView>(R.id.ivContentCardCover)
@@ -52,7 +53,7 @@ class SearchActivityAdapter(
 
             imageView.setOnClickListener{
                 if (item != null) {
-                    contentClickListener.onContentClicked(item.getContentId(), item.contentType)
+                    contentClickListener.onContentClicked(item)
                 }
             }
         }
@@ -78,8 +79,4 @@ class SearchActivityAdapter(
     override fun getItemCount(): Int {
         return content.size
     }
-}
-
-interface CardClickListener {
-    fun onCardClick(position: Int)
 }
