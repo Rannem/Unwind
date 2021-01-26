@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bg_global"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="204dp"
+        android:rotationX="101"
+        android:rotationY="-12"
+        android:text="[]"
+        android:textSize="200sp"
+        android:textColor="#4DFFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/btnMainPageLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="234dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="308dp"
+        android:background="#00FFFFFF"
+        android:rotationX="5"
+        android:shadowColor="@color/primaryLight"
+        android:textColor="#4DFFFFFF"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="30"
+        android:text="@string/app_name"
+        android:textSize="@dimen/login_title_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/btnMainPageLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownIdInLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

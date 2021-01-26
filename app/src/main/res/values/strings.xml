@@ -4,4 +4,11 @@
      <string name="register">Register</string>
      <string name="login">Login</string>
      <string name="search_field">search field</string>
- </resources>
+    <string name="header_title">Your name</string>
+    <string name="header_text">some value</string>
+    <string name="nav_title_1">Home</string>
+    <string name="nav_title_2">Search</string>
+    <string name="nav_title_3">Profile</string>
+    <string name="content_title">Title</string>
+    <string name="search_for_content">Search</string>
+</resources>
