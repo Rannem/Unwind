@@ -41,10 +41,9 @@ class SearchActivity : AppCompatActivity() {
 
         content = mutableListOf()
         adapter = SearchActivityAdapter(this, content, object: SearchActivityAdapter.ContentClickListener {
-            override fun onContentClicked(contentId: Int, contentType: ContentType) {
+            override fun onContentClicked(content: Content) {
                 val intent = Intent(this@SearchActivity, ContentViewActivity::class.java)
-                intent.putExtra("contentId", contentId)
-                intent.putExtra("contentType", contentType)
+                intent.putExtra("content", content)
                 startActivity(intent)
             }
         })
@@ -69,13 +68,6 @@ class SearchActivity : AppCompatActivity() {
         }
 
         apiHandler.searchType(this, contentType, content, etSearchField.text.toString(), tvContentSearchFeedback, adapter)
-
-       /* when(rbContentType.text) {
-            "Tv Show"-> apiHandler.tvContentSearch(this, etSearchField.text.toString(), content, tvContentSearchFeedback, adapter)
-            "Movie"-> apiHandler.movieContentSearch(this, etSearchField.text.toString(), content, movieContentSearchFeedback, adapter)
-            else -> println("Something went wrong, blame the other guy!")
-        }*/
-
 
     }
 

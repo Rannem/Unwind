@@ -7,6 +7,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.RequestFuture
 import com.android.volley.toolbox.Volley
 import dev.kotlin.unwind.adapters.SearchActivityAdapter
 import dev.kotlin.unwind.models.Content
@@ -16,10 +17,12 @@ import dev.kotlin.unwind.models.TvShow
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import java.lang.Exception
+import java.util.concurrent.TimeUnit
 
 class ApiHandler {
 
-    companion object{
+    companion object {
         private const val TAG = "ApiHandler"
         private const val NO_GENRES = "no_genres"
         private const val NO_IMAGE = "no_image"
@@ -81,7 +84,7 @@ class ApiHandler {
         smallImage = try {
             jsonObject?.getJSONObject("image")?.getString("medium").toString()
         } catch (e: JSONException) {
-           NO_IMAGE
+            NO_IMAGE
         }
 
         if (smallImage != NO_IMAGE) {
@@ -119,7 +122,7 @@ class ApiHandler {
         content: MutableList<Content?>,
         movieContentSearchFeedback: TextView,
         adapter: SearchActivityAdapter
-    ){
+    ) {
         val queue = Volley.newRequestQueue(context)
         val url = "https://www.omdbapi.com/?s=$searchString&apikey=e8031205"
         val contentType = ContentType.MOVIE
@@ -128,9 +131,14 @@ class ApiHandler {
             Request.Method.GET, url, null,
             Response.Listener {
                 content.clear()
-                if (it.getString("Response").equals("True")){
+                if (it.getString("Response").equals("True")) {
                     val jasonResponse: JSONArray = it.getJSONArray("Search")
-                    iterateSearchResult(jasonResponse, movieContentSearchFeedback, content, contentType)
+                    iterateSearchResult(
+                        jasonResponse,
+                        movieContentSearchFeedback,
+                        content,
+                        contentType
+                    )
                 } else {
                     movieContentSearchFeedback.text = "No result"
                     content.clear()
@@ -160,10 +168,14 @@ class ApiHandler {
         }
     }
 
-    private fun parseJsonObjectToContent(jsonObject: JSONObject?, contentType: ContentType): Content? {
+    private fun parseJsonObjectToContent(
+        jsonObject: JSONObject?,
+        contentType: ContentType
+    ): Content? {
         val contentItem: Content
         when (contentType) {
-            ContentType.TV_SHOW -> contentItem = parseJsonObjectToTvShow(jsonObject?.getJSONObject("show")) as TvShow
+            ContentType.TV_SHOW -> contentItem =
+                parseJsonObjectToTvShow(jsonObject?.getJSONObject("show")) as TvShow
             ContentType.MOVIE -> contentItem = parseJsonObjectToMovie(jsonObject) as Movies
             else -> contentItem = parseJsonObjectToMovie(jsonObject) as Movies
         }
@@ -202,36 +214,59 @@ class ApiHandler {
         tvContentSearchFeedback: TextView,
         adapter: SearchActivityAdapter
     ) {
-        when(contentType){
-            ContentType.MOVIE -> movieContentSearch(context, searchString, content, tvContentSearchFeedback, adapter)
-            ContentType.TV_SHOW -> tvContentSearch(context, searchString, content, tvContentSearchFeedback, adapter)
+        when (contentType) {
+            ContentType.MOVIE -> movieContentSearch(
+                context,
+                searchString,
+                content,
+                tvContentSearchFeedback,
+                adapter
+            )
+            ContentType.TV_SHOW -> tvContentSearch(
+                context,
+                searchString,
+                content,
+                tvContentSearchFeedback,
+                adapter
+            )
         }
     }
 
-    fun getTvShowById(context: Context, contentId: Int): TvShow? {
+    fun setTvShowById(
+        context: Context,
+        contentId: Int
+    ): TvShow? {
         val queue = Volley.newRequestQueue(context)
         val url = "https://api.tvmaze.com/shows/$contentId"
         val contentType = ContentType.TV_SHOW
         var tvShow: TvShow? = null
 
+        val future: RequestFuture<JSONObject> = RequestFuture.newFuture()
+
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
-            Response.Listener {
-                tvShow = parseJsonObjectToTvShow(it)
-            },
-            Response.ErrorListener { error ->
-                Log.i(TAG, error.message.toString())
-            }
+            future, future
         )
         queue.add(jsonRequest)
+        try {
+            val response = future.get(3 , TimeUnit.SECONDS)
+            println("testitest")
+            return parseJsonObjectToTvShow(response) as TvShow
+        } catch (e: Exception) {
+            Log.i(TAG, e.message.toString())
+        }
         return tvShow
     }
 
-    fun getMovieById(context: Context, contentId: Int): Movies? {
+    fun setMovieById(
+        context: Context,
+        contentId: Int
+    ): Movies? {
         val queue = Volley.newRequestQueue(context)
         val url = "https://www.omdbapi.com/?i=$contentId&apikey=e8031205"
         val contentType = ContentType.MOVIE
         var movie: Movies? = null
+
 
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, url, null,

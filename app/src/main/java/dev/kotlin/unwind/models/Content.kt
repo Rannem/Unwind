@@ -1,8 +1,8 @@
 package dev.kotlin.unwind.models
 
-import android.net.Uri
+import java.io.Serializable
 
-interface Content
+interface Content: Serializable
 {
     val contentType: ContentType
     fun getTitle(): String
