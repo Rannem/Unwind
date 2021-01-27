@@ -40,7 +40,7 @@ class MainRegister : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
 
                     if (task.isSuccessful) {
-                        Log.e("Task Message", "Succcessfull")
+                        Log.e("Task Message", "Successfull")
 
                         var intent = Intent(this, DashboardActivity::class.java)
                         startActivity(intent)

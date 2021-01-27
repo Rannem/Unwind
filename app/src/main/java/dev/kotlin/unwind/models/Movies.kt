@@ -20,5 +20,4 @@ class Movies (
     override fun getCoverImageUrl(): String {
         return poster
     }
-
 }

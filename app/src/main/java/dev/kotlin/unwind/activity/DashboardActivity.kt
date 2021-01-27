@@ -11,18 +11,19 @@ import kotlinx.android.synthetic.main.activity_dashboard.*
 class DashboardActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        auth = FirebaseAuth.getInstance()
+        // TODO - Add button - Edit Profile
 
+        auth = FirebaseAuth.getInstance()
         btnSignOut.setOnClickListener {
             auth.signOut()
 
             var intent = Intent(this, MainRegister::class.java)
             startActivity(intent)
-
         }
 
         btnTestContentSearch.setOnClickListener {
@@ -31,4 +32,6 @@ class DashboardActivity : AppCompatActivity() {
 
         }
     }
+
+
 }

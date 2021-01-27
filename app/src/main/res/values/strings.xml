@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Unwind</string>
-     <string name="registerNewAccont">Register</string>
-     <string name="register">Register</string>
-     <string name="login">Login</string>
-     <string name="search_field">search field</string>
+    <string name="registerNewAccont">Register</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="search_field">search field</string>
+
     <string name="header_title">Your name</string>
     <string name="header_text">some value</string>
     <string name="nav_title_1">Home</string>
@@ -11,4 +12,49 @@
     <string name="nav_title_3">Profile</string>
     <string name="content_title">Title</string>
     <string name="search_for_content">Search</string>
+
+    <string name="favorite_movie">Favorite Movie</string>
+    <string name="profile_image">iv_user_profile_image</string>
+    <string name="default_user_profile_image">Default User Profile Image</string>
+
+    <string name="user_name">Helge Olsen</string>
+    <string name="dummytext_minicard_movie">125</string>
+    <string name="card_movies">Movies</string>
+    <string name="user_watch_list">Watch List</string>
+    <string name="dummyvalue_minicard_list">5</string>
+    <string name="dummyvalue_minicard_following">Following</string>
+    <string name="dummy_value_minicard_following">32</string>
+    <string name="profile_activity_feed">Profile Activity</string>
+    <string name="profile_image_create_profile">profile_image_create_profile</string>
+    <string name="name">Name</string>
+
+    <string name="last_name">Last Name</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="favorite_genre">Favorite Genre</string>
+
+    <string name="age">Age</string>
+    <string name="sp_last_name">Last Name:</string>
+    <string name="sp_age">Age</string>
+    <string name="sp_first_name">First Name:</string>
+    <string name="sp_bio">Bio:</string>
+    <string name="sp_profile">Profile</string>
+    <string name="update_sp_iv_profile_image_icon">update_sp_iv_profile_image_icon</string>
+
+    <string name="edit_profile">Edit Profile</string>
+    <string name="country">Country</string>
+    <string name="bio">Bio</string>
+    <string name="gender">Gender</string>
+    <string name="profile">profile</string>
+    <string name="first_name">First Name</string>
+
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="logout">Logout?</string>
+    <string name="dashboard">DashBoard</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="username">tv_sp_display_username</string>
+    <string name="unwind_app_logo">UnWInd App Logo</string>
+    <string name="user_lastname">last name</string>
+    <string name="cp_unwind_app_logo">the UnWInd application logo</string>
+    <string name="show_profile">Show Profile</string>
+    <string name="movies">Movies</string>
 </resources>

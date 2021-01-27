@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Unwind">
+        <activity android:name=".CreateProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".activity.ContentViewActivity"></activity>
         <activity
             android:name=".activity.SplashActivity"
