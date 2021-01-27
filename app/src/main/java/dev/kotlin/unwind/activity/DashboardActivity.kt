@@ -3,7 +3,6 @@ package dev.kotlin.unwind.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.google.firebase.auth.FirebaseAuth
 import dev.kotlin.unwind.MainRegister
 import dev.kotlin.unwind.R
@@ -20,16 +19,10 @@ class DashboardActivity : AppCompatActivity() {
         // TODO - Add button - Edit Profile
 
         auth = FirebaseAuth.getInstance()
-
         btnSignOut.setOnClickListener {
             auth.signOut()
 
             var intent = Intent(this, MainRegister::class.java)
-            startActivity(intent)
-        }
-
-        btnShowProfile.setOnClickListener{
-            var intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
 
