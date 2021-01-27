@@ -4,16 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    tools:context=".activity.SearchActivity">
+
+    <!--<androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp">
+
+    </androidx.cardview.widget.CardView>-->
 
     <EditText
         android:id="@+id/etSearchField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:hint="@string/search_field"
         android:inputType="text"
-        android:text="search field"
+        android:textColorHint="@color/white"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,13 +37,72 @@
         android:text="Search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSearchField" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
+        android:id="@+id/rvTvContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:descendantFocusability="blocksDescendants"
+        android:background="@color/primaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSearchContent" />
+
+    <TextView
+        android:id="@+id/tvContentSearchFeedback"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSearchContent" />
+        app:layout_constraintTop_toBottomOf="@+id/rvTvContent" />
+    <TextView
+        android:id="@+id/movieContentSearchFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvTvContent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSearchField">
+
+
+        <RadioGroup
+            android:id="@+id/sa_rg_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+            <RadioButton
+                android:id="@+id/rb_tvShows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Tv Show"
+                android:textColor="@color/white"
+                android:padding="16dp"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_movies"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Movie"
+                android:padding="16dp"/>
+        </RadioGroup>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

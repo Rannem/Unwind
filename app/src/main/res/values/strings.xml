@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Unwind</string>
+     <string name="registerNewAccont">Register</string>
+     <string name="register">Register</string>
+     <string name="login">Login</string>
+     <string name="search_field">search field</string>
     <string name="user_name">Helge Olsen</string>
     <string name="dummytext_minicard_movie">125</string>
     <string name="card_movies">Movies</string>
