@@ -1,6 +1,7 @@
 package dev.kotlin.unwind.models
 
 class Movies (
+    private val contentId: String,
     private val title: String,
     private val poster: String,
     private val metaScore: String
@@ -12,8 +13,8 @@ class Movies (
         return title
     }
 
-    override fun getContentId(): Int {
-        return 0
+    override fun getContentId(): String {
+        return contentId
     }
 
     override fun getCoverImageUrl(): String {

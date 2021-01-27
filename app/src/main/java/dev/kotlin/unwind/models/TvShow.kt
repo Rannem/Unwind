@@ -3,7 +3,7 @@ package dev.kotlin.unwind.models
 import android.net.Uri
 
 class TvShow(
-    private val contentId: Int,
+    private val contentId: String,
     private val title: String,
     private val imageUrlSmall: String,
     private val imageUrlLarge: String,
@@ -19,7 +19,7 @@ class TvShow(
         return title
     }
 
-    override fun getContentId(): Int {
+    override fun getContentId(): String {
         return contentId
     }
 

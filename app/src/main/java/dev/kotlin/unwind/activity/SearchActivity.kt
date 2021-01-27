@@ -43,10 +43,12 @@ class SearchActivity : AppCompatActivity() {
         adapter = SearchActivityAdapter(this, content, object: SearchActivityAdapter.ContentClickListener {
             override fun onContentClicked(content: Content) {
                 val intent = Intent(this@SearchActivity, ContentViewActivity::class.java)
-                intent.putExtra("content", content)
+                intent.putExtra("contentId", content.getContentId())
+                intent.putExtra("contentType", content.contentType)
                 startActivity(intent)
             }
         })
+
         apiHandler = ApiHandler()
 
         rvTvContent.adapter = adapter

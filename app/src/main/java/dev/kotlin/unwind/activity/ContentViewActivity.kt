@@ -5,9 +5,12 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import com.squareup.picasso.Picasso
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import dev.kotlin.unwind.R
+import dev.kotlin.unwind.adapters.ContentViewActivityAdapter
 import dev.kotlin.unwind.models.Content
+import dev.kotlin.unwind.models.ContentType
 import dev.kotlin.unwind.utils.ApiHandler
 
 class ContentViewActivity : AppCompatActivity() {
@@ -17,12 +20,11 @@ class ContentViewActivity : AppCompatActivity() {
         private const val COVER_IMAGE_HEIGHT = 750
     }
 
-    private lateinit var cvContentMainInfo: CardView
-    private lateinit var ivContentMainInfoCover: ImageView
-    private lateinit var tvContentMainInfoTitle: TextView
-    private lateinit var tvContentDetailsDetails: TextView
+    private lateinit var adapter: ContentViewActivityAdapter
 
-    private var content: Content? = null
+    private lateinit var rvContentViewDetailsDetails: RecyclerView
+
+    private var content: MutableList<Content?> = mutableListOf()
 
     private val apiHandler = ApiHandler()
 
@@ -30,35 +32,34 @@ class ContentViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_content_view)
 
-        cvContentMainInfo = findViewById(R.id.cvContentMainInfo)
-        ivContentMainInfoCover = findViewById(R.id.ivContentMainInfoCover)
-        tvContentMainInfoTitle = findViewById(R.id.tvContentMainInfoTitle)
-        tvContentDetailsDetails = findViewById(R.id.tvContentDetailsDetails)
+        rvContentViewDetailsDetails = findViewById(R.id.rvContentViewDetailsDetails)
 
-        content = intent.getSerializableExtra("content") as Content?
+        content.add(intent.getSerializableExtra("content") as Content?)
+        val contentId = intent.getSerializableExtra("contentId") as String
+        val contentType = intent.getSerializableExtra("contentType") as ContentType
+
+        adapter = ContentViewActivityAdapter(this, content)
+
+        rvContentViewDetailsDetails.adapter = adapter
+        rvContentViewDetailsDetails.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         if (false) {
             // Check if content exists in database and retrieve the information from there
         }
-        val coverUrl = content?.getCoverImageUrl()
 
-        if (coverUrl != "no_image") {
-            Picasso.get().load(coverUrl).resize(
-                COVER_IMAGE_WIDTH,
-                COVER_IMAGE_HEIGHT
-            ).into(ivContentMainInfoCover);
-        } else {
-            ivContentMainInfoCover.setImageResource(R.drawable.test)
-            ivContentMainInfoCover.layoutParams.width = COVER_IMAGE_WIDTH
-            ivContentMainInfoCover.layoutParams.height = COVER_IMAGE_HEIGHT
+        setContent(contentType, contentId)
+
+
+
+
+    }
+
+    private fun setContent(contentType: ContentType, contentId: String): Content? {
+        when (contentType){
+            ContentType.MOVIE -> return apiHandler.setMovieById(this, contentId, adapter, content)
+            ContentType.TV_SHOW -> return apiHandler.setTvShowById(this, contentId, adapter, content)
         }
-
-        val contentTitle = content?.getTitle()
-        if (contentTitle != null) {
-            tvContentMainInfoTitle.text = contentTitle
-        }
-
-
+        return null
     }
 
 }

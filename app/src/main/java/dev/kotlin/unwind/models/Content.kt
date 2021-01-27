@@ -6,6 +6,6 @@ interface Content: Serializable
 {
     val contentType: ContentType
     fun getTitle(): String
-    fun getContentId(): Int
+    fun getContentId(): String
     fun getCoverImageUrl(): String
 }
