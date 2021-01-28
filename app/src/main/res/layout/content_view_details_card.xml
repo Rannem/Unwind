@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cvContentForRV"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     >
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -61,10 +62,9 @@
             android:id="@+id/cvContentDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tvContentMainInfoTitle"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            >
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentMainInfoTitle">
 
             <TextView
                 android:id="@+id/tvContentDetailsDetails"
@@ -72,7 +72,108 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 app:layout_constraintStart_toStartOf="parent" />
+
+
         </androidx.cardview.widget.CardView>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton"
+            android:layout_width="24dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:background="#000F2026"
+            android:padding="0dp"
+            app:icon="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentMainInfoTitle" />
+
+        <TextView
+            android:id="@+id/tv_imbdrating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:text="0.0"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/materialButton"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentMainInfoTitle" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="/"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_imbdrating"
+            app:layout_constraintTop_toTopOf="@+id/cvContentDetails" />
+
+        <TextView
+            android:id="@+id/tv_runtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="runtime"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentMainInfoTitle" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="/"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_runtime"
+            app:layout_constraintTop_toTopOf="@+id/cvContentDetails" />
+
+
+        <TextView
+            android:id="@+id/tv_genres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="genres"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentMainInfoTitle" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_runtime">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_plot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="plot description"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_genres" />
+            </LinearLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+</LinearLayout>
 

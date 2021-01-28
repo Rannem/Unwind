@@ -14,6 +14,8 @@
         <activity android:name=".CreateProfileActivity"></activity>
         <activity android:name=".ProfileActivity" />
         <activity android:name=".activity.ContentViewActivity"></activity>
+
+
         <activity
             android:name=".activity.SplashActivity"
             android:screenOrientation="portrait"

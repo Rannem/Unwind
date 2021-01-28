@@ -100,6 +100,7 @@ class ApiHandler {
             largeImage = "https://" + largeImage.substring(6)
         }
 
+
         try {
             val jsonArrayGenres = jsonObject?.getJSONArray("genres")
             if (jsonArrayGenres != null) {
@@ -111,7 +112,26 @@ class ApiHandler {
         } catch (e: JSONException) {
             genres.add(NO_GENRES)
         }
-        return TvShow(contentId, title, smallImage, largeImage, genres)
+
+        val IMBDRating = try {
+            jsonObject?.getJSONObject("rating")?.getString("average").toString()
+        } catch (e: JSONException) {
+            NO_SCORE
+        }
+        val runtime: String = try {
+            jsonObject?.getString("runtime").toString()
+        } catch (e: JSONException) {
+            NO_SCORE
+        }
+        val plot: String = try {
+            jsonObject?.getString("summary").toString()
+        } catch (e: JSONException) {
+            NO_SCORE
+        }
+
+
+
+        return TvShow(contentId, title, smallImage, largeImage, IMBDRating, runtime,  genres, plot)
     }
 
 
@@ -193,19 +213,37 @@ class ApiHandler {
             NO_NAME
         }
 
-        var metaScore: String = try {
-            movie?.getString("Metascore").toString()
-        } catch (e: JSONException) {
-            NO_SCORE
-        }
-
         var poster: String = try {
             movie?.getString("Poster").toString()
         } catch (e: JSONException) {
             NO_IMAGE
         }
 
-        return Movies(contentId, title, poster, metaScore)
+        var IMBDRating: String = try {
+            movie?.getString("imdbRating").toString()
+        } catch (e: JSONException) {
+            NO_SCORE
+        }
+
+        var plot: String = try {
+            movie?.getString("Plot").toString()
+        } catch (e: JSONException) {
+            NO_SCORE
+        }
+
+        var runtime: String = try {
+            movie?.getString("Runtime").toString()
+        } catch (e: JSONException) {
+            NO_SCORE
+        }
+
+        var genre: String = try {
+            movie?.getString("Genre").toString()
+        } catch (e: JSONException) {
+            NO_SCORE
+        }
+
+        return Movies(contentId, title, poster, IMBDRating, runtime, genre,  plot)
     }
 
     fun searchType(

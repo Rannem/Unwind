@@ -7,7 +7,10 @@ class TvShow(
     private val title: String,
     private val imageUrlSmall: String,
     private val imageUrlLarge: String,
-    private val genres: List<String>
+    private val IMBDRating: String,
+    private val runtime: String,
+    private val genres: List<String>,
+    private val plot: String
 ) : Content
 {
 
@@ -25,6 +28,25 @@ class TvShow(
 
     override fun getCoverImageUrl(): String {
         return imageUrlSmall
+    }
+
+    override fun getIMBDRating(): String {
+        return IMBDRating.toString()
+    }
+
+    override fun getPlot(): String {
+        return plot
+    }
+
+    override fun getRuntime(): String {
+        return "$runtime min"
+    }
+
+    override fun getGenre(): String {
+        if (genres.size > 2){
+            return ""+ genres[0]+ ", "+ genres[1]+""
+        }else
+            return genres.toString()
     }
 
     fun getImageUrlSmall(): String {

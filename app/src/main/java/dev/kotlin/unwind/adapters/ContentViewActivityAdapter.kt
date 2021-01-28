@@ -19,7 +19,6 @@ class ContentViewActivityAdapter(
 ) : RecyclerView.Adapter<ContentViewActivityAdapter.ViewHolder>() {
 
     companion object {
-        private const val MARGIN_SIZE = 10
         private const val COVER_IMAGE_WIDTH = 550
         private const val COVER_IMAGE_HEIGHT = 750
     }
@@ -27,10 +26,23 @@ class ContentViewActivityAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val imageView = itemView.findViewById<ImageView>(R.id.ivContentMainInfoCover)
         private val textView = itemView.findViewById<TextView>(R.id.tvContentMainInfoTitle)
+        private val imbdRatingView = itemView.findViewById<TextView>(R.id.tv_imbdrating)
+        private val plotTextView = itemView.findViewById<TextView>(R.id.tv_plot)
+        private val genreTextView = itemView.findViewById<TextView>(R.id.tv_genres)
+        private val runtimeTextView = itemView.findViewById<TextView>(R.id.tv_runtime)
+
 
         fun bind(position: Int) {
             val item: Content? = content[position]
             val coverUrl = item?.getCoverImageUrl()
+            imbdRatingView.text = item?.getIMBDRating()
+            plotTextView.text = item?.getPlot()
+            genreTextView.text = item?.getGenre()
+            runtimeTextView.text = item?.getRuntime()
+
+
+
+
             if (coverUrl != "no_image") {
                 Picasso.get().load(coverUrl).resize(
                     COVER_IMAGE_WIDTH,
@@ -50,14 +62,6 @@ class ContentViewActivityAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View =
             LayoutInflater.from(context).inflate(R.layout.content_view_details_card, parent, false)
-        val layoutParams =
-            view.findViewById<CardView>(R.id.cvContentForRV).layoutParams as ViewGroup.MarginLayoutParams
-        layoutParams.setMargins(
-            MARGIN_SIZE,
-            MARGIN_SIZE,
-            MARGIN_SIZE,
-            MARGIN_SIZE
-        )
         return ViewHolder(view)
     }
 

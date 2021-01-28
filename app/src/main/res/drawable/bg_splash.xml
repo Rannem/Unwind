@@ -2,10 +2,18 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <solid android:color="@color/primaryDark"/>
-    <gradient android:startColor="@color/primaryDark"
-        android:endColor="@color/primary" />
-    <size android:height="2000dp"
-        android:width="1000dp"/>
+
+    <gradient
+        android:startColor="@color/primary"
+        android:endColor="@color/primaryDark"
+        />
+
+
+    <size
+        android:height="2220dp"
+        android:width="1080dp"
+        />
+
 
 
 </shape>
