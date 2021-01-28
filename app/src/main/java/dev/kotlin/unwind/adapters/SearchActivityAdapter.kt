@@ -21,7 +21,7 @@ class SearchActivityAdapter(
     companion object {
         private const val MARGIN_SIZE = 10
         private const val COVER_IMAGE_WIDTH = 400
-        private const val COVER_IMAGE_HEIGHT = 600
+        private const val COVER_IMAGE_HEIGHT = 560
     }
 
     interface ContentClickListener {
