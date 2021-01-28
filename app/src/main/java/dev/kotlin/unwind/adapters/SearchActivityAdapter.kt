@@ -20,8 +20,8 @@ class SearchActivityAdapter(
 
     companion object {
         private const val MARGIN_SIZE = 10
-        private const val COVER_IMAGE_WIDTH = 550
-        private const val COVER_IMAGE_HEIGHT = 750
+        private const val COVER_IMAGE_WIDTH = 400
+        private const val COVER_IMAGE_HEIGHT = 600
     }
 
     interface ContentClickListener {
@@ -43,7 +43,7 @@ class SearchActivityAdapter(
                     COVER_IMAGE_HEIGHT
                 ).into(imageView);
             } else {
-                imageView.setImageResource(R.drawable.test)
+                imageView.setImageResource(R.drawable.unwind_ps_logo_2)
                 imageView.layoutParams.width =
                     COVER_IMAGE_WIDTH
                 imageView.layoutParams.height =

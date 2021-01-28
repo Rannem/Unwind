@@ -4,25 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashActivity">
-
     <activity
         android:id="@+id/splashActivity"
         android:name="dev.kotlin.unwind.activity.SplashActivity"
         android:label="activity_splash"
-        tools:layout="@layout/activity_splash" >
-        <action
-            android:id="@+id/action_splashActivity_to_mainStartpage"
-            app:destination="@id/mainStartpage" />
-    </activity>
+        tools:layout="@layout/activity_splash" />
     <activity
         android:id="@+id/mainStartpage"
         android:name="dev.kotlin.unwind.MainStartpage"
         android:label="activity_main_startpage"
-        tools:layout="@layout/activity_main_startpage" >
-        <action
-            android:id="@+id/action_mainStartpage_to_searchActivity"
-            app:destination="@id/searchActivity" />
-    </activity>
+        tools:layout="@layout/activity_main_startpage" />
+    <activity
+        android:id="@+id/dashboardActivity"
+        android:name="dev.kotlin.unwind.activity.DashboardActivity"
+        android:label="activity_dashboard"
+        tools:layout="@layout/activity_dashboard" />
     <activity
         android:id="@+id/searchActivity"
         android:name="dev.kotlin.unwind.activity.SearchActivity"
